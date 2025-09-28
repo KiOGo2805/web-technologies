@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Анкета студента</title>
+</head>
+<body align="center">
+
+  <h1>Форма анкети студента</h1>
+
+  <form action="" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+      <legend>Особисті дані</legend>
+
+      <label for="name">Ім’я:</label>
+      <input type="text" id="name" name="name" placeholder="Введіть ім’я" required tabindex="1"><br><br>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" 
+             placeholder="Введіть пароль" 
+             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}" 
+             title="Мінімум 6 символів, 1 велика літера, 1 мала літера, 1 цифра" 
+             required tabindex="2"><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" 
+             placeholder="Введіть email" 
+             autocomplete="off" 
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+             required tabindex="3"><br><br>
+
+      <label for="phone">Мобільний:</label>
+      <input type="tel" id="phone" name="phone" 
+             placeholder="+380..." 
+             pattern="\+380\d{9}" 
+             required tabindex="4"><br><br>
+
+      <label for="birth">Дата народження:</label>
+      <input type="date" id="birth" name="birth" required tabindex="5"><br><br>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend>Параметри</legend>
+
+      <p>Оберіть стать:</p>
+      <label><input type="radio" name="gender" value="male" checked> Чоловіча</label>
+      <label><input type="radio" name="gender" value="female"> Жіноча</label>
+      <label><input type="radio" name="gender" value="other"> Інша</label><br><br>
+
+      <p>Оберіть улюблені предмети:</p>
+      <label><input type="checkbox" name="subject" value="math"> Математика</label>
+      <label><input type="checkbox" name="subject" value="cs"> Інформатика</label>
+      <label><input type="checkbox" name="subject" value="history"> Історія</label>
+      <label><input type="checkbox" name="subject" value="english"> Англійська</label><br><br>
+
+      <p>Виберіть курс навчання:</p>
+      <select name="year" tabindex="6">
+        <option value="1">1 курс</option>
+        <option value="2" selected>2 курс</option>
+        <option value="3">3 курс</option>
+        <option value="4">4 курс</option>
+        <option value="5">5 курс</option>
+      </select><br><br>
+
+      <p>Виберіть улюблені мови програмування:</p>
+      <select name="languages" multiple size="4" tabindex="7">
+        <option value="c++">C++</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="js">JavaScript</option>
+        <option value="c#">C#</option>
+        <option value="php">PHP</option>
+      </select><br><br>
+
+      <p>Групи предметів:</p>
+      <select name="grouped">
+        <optgroup label="Природничі науки">
+          <option value="math">Математика</option>
+          <option value="physics">Фізика</option>
+          <option value="chemistry">Хімія</option>
+        </optgroup>
+        <optgroup label="Гуманітарні науки">
+          <option value="history">Історія</option>
+          <option value="philosophy">Філософія</option>
+          <option value="language">Мови</option>
+        </optgroup>
+      </select><br><br>
+
+      <p>Місто проживання:</p>
+      <input list="cities" name="city">
+      <datalist id="cities">
+        <option value="Київ">
+        <option value="Львів">
+        <option value="Одеса">
+        <option value="Харків">
+        <option value="Чернівці">
+      </datalist>
+    </fieldset>
+
+    <br>
+
+    <!-- Коментар -->
+    <fieldset>
+      <legend>Додатково</legend>
+      <label for="comment">Коментар:</label><br>
+      <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Ваші побажання"></textarea>
+    </fieldset>
+
+    <br>
+
+    <!-- Файл -->
+    <fieldset>
+      <legend>Завантаження файлу</legend>
+      <input type="file" name="files" accept="audio/*" multiple>
+    </fieldset>
+
+    <br><br>
+
+    <!-- Кнопки -->
+    <button type="submit">Надіслати</button>
+    <button type="reset">Очистити</button>
+  </form>
+
+  <br><br>
+  <p><a href="../index.html">Повернутись на головну</a></p>
+
+</body>
+</html>
