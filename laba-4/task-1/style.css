@@ -1,0 +1,52 @@
+/* 1. Універсальний селектор */
+* {
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+/* 2. Селектори тегів */
+p {
+  color: green;
+  text-align: center;
+}
+
+div {
+  text-align: justify;
+}
+
+/* 3. Класи та ідентифікатори */
+
+/* Червоний колір */
+.red {
+  color: red;
+}
+
+/* Без перенесення рядка */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Курсив і жирний */
+#special {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Тінь тексту */
+.shadow {
+  text-shadow: 5px -5px 3px red;
+}
+
+/* Перекреслення, верхній регістр, відступ */
+.decor {
+  text-decoration: line-through;
+  text-transform: uppercase;
+  text-indent: 50px;
+}
+
+/* Інтервали між символами і словами */
+.spaced {
+  letter-spacing: 30px;
+  word-spacing: 50px;
+}
