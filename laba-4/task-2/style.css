@@ -1,0 +1,35 @@
+/* Базові стилі */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.red {
+  color: red;
+  font-size: 32px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.green-line {
+  border: none;
+  height: 6px;
+  width: 85%;
+  background-color: green;
+}
+
+#tip {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}

@@ -1,0 +1,37 @@
+/* 3.1 — усі посилання фіолетові */
+a {
+  color: purple;
+}
+
+/* 3.2 — пункти головного меню зелені */
+a.main {
+  color: green;
+}
+
+/* 3.3 — маркери останнього списку (ягоди) — квадрат */
+ul.berries li {
+  list-style-type: square;
+}
+
+/* 3.4 — маркери другого (овочі) — піктограма */
+ul.vegetables li {
+  list-style-image: url("li.svg");
+}
+
+/* 3.5 — прибрати маркери лише у вкладених списках */
+ul ul {
+  list-style-type: none;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+/* 3.6 — прибрати підкреслення у посилань, що в останньому списку */
+ul.berries a {
+  text-decoration: none;
+}
+
+/* 3.7 — для нумерованого списку «Різне» задати внутрішнє розташування */
+ol {
+  list-style-position: inside;
+  margin-left: 25px;
+}
