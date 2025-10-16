@@ -17,21 +17,21 @@ ul {
   margin: 0;
 }
 
-.level1 > li {
-    background-color: rgb(103, 158, 128);
-    padding: 0px 20px 0px 50px;
-    background-repeat: no-repeat;
-    margin-bottom: 10px;
+.levelOne > li {
+  background-color: rgb(103, 158, 128);
+  padding: 0 20px 0  50px;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
 }
 
-.level2 > li {
-    font-size: 18px;
-    font-style: italic;
-    background-color: rgb(153, 180, 102);
-    margin-bottom: 10px;
-    padding-left: 40px;
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
+.levelTwo > li {
+  font-size: 18px;
+  font-style: italic;
+  background-color: rgb(153, 180, 102);
+  margin-bottom: 10px;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
 }
 
 span {
@@ -39,18 +39,17 @@ span {
   display: inline-block;
 }
 
-.level1 > li > span {
+.levelOne > li > span {
   font-size: 20px;
   font-weight: 700;
   background-color: rgb(199, 124, 106);
   margin-bottom: 10px;
 }
 
-.level2 > li > span {
+.levelTwo > li > span {
   background-color: rgb(218, 106, 32);
 }
 
-/* --- ІКОНКИ (через background-image у li) --- */
 .prepare    { background-image: url("icons/rule.png"); }
 .rest       { background-image: url("icons/rule.png"); }
 
