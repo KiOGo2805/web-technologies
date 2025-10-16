@@ -10,78 +10,94 @@
   color: #222;
 }
 
-.mainTitle {
+.formTitle {
   text-align: center;
   color: #003366;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .formBlock {
   background-color: #fff;
   border: 1px solid #cce0ff;
   border-radius: 10px;
-  padding: 20px 40px;
-  margin-top: 30px;
+  padding: 25px 45px;
+  margin-top: 40px;
   box-shadow: 0 0 5px rgba(0, 0, 50, 0.05);
 }
 
 .formBlock h2 {
   color: #004c99;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .studentForm fieldset {
   border: 2px solid #88aaff;
   border-radius: 10px;
-  padding: 15px 25px;
-  margin-bottom: 25px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
 }
 
 .studentForm legend {
   color: #004080;
   font-weight: bold;
+  padding: 0 10px;
 }
 
 .studentForm label {
   display: block;
-  margin: 6px 0 3px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .studentForm input,
 .studentForm select,
 .studentForm textarea {
   width: 95%;
-  padding: 7px;
+  padding: 8px;
   border: 1px solid #bbb;
   border-radius: 5px;
   font-size: 14px;
-  margin-bottom: 12px;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.studentForm input:focus,
+.studentForm select:focus,
+.studentForm textarea:focus {
+  outline: none;
+  border-color: #3366cc;
+  box-shadow: 0 0 4px rgba(51, 102, 204, 0.3);
 }
 
 .studentForm p {
-  margin: 10px 0 5px;
+  margin: 15px 0 8px;
+  font-weight: 500;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .btn {
   background-color: #3366cc;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 25px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
   background-color: #003399;
+  transform: scale(1.05);
 }
 
 .btn.reset {
@@ -92,17 +108,28 @@
   background-color: #777;
 }
 
-.back {
-  text-align: center;
-  margin-top: 25px;
+.studentForm input[type="radio"],
+.studentForm input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
 }
 
-.backLink {
-  color: #0033cc;
-  text-decoration: none;
-  font-weight: bold;
+.studentForm label input[type="radio"],
+.studentForm label input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.backLink:hover {
-  text-decoration: underline;
+.studentForm label {
+  display: block;
+}
+
+.studentForm p + label {
+  margin-top: 5px;
+}
+
+.studentForm input:not([type="radio"]):not([type="checkbox"]),
+.studentForm select,
+.studentForm textarea {
+  margin-bottom: 15px;
 }

@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="formContainer">
-      <h1 class="mainTitle">Форма анкети студента</h1>
+      <h1 class="formTitle">Форма анкети студента</h1>
 
       <!-- Форма GET -->
       <div class="formBlock">
@@ -16,46 +16,46 @@
           <fieldset>
             <legend>Особисті дані</legend>
 
-            <label for="name1">Ім’я:</label>
+            <label for="nameGet">Ім’я:</label>
             <input
               type="text"
-              id="name1"
+              id="nameGet"
               name="name"
               placeholder="Введіть ім’я"
               required
             />
 
-            <label for="password1">Пароль:</label>
+            <label for="passwordGet">Пароль:</label>
             <input
               type="password"
-              id="password1"
+              id="passwordGet"
               name="password"
               placeholder="Введіть пароль"
-              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}"
+              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}"
               title="Мінімум 6 символів, 1 велика літера, 1 мала літера, 1 цифра"
               required
             />
 
-            <label for="email1">Email:</label>
+            <label for="emailGet">Email:</label>
             <input
               type="email"
-              id="email1"
+              id="emailGet"
               name="email"
               placeholder="Введіть email"
               required
             />
 
-            <label for="phone1">Мобільний:</label>
+            <label for="phoneGet">Мобільний:</label>
             <input
               type="tel"
-              id="phone1"
+              id="phoneGet"
               name="phone"
               placeholder="+380..."
               required
             />
 
-            <label for="birth1">Дата народження:</label>
-            <input type="date" id="birth1" name="birth" required />
+            <label for="birthGet">Дата народження:</label>
+            <input type="date" id="birthGet" name="birth" required />
           </fieldset>
 
           <fieldset>
@@ -63,36 +63,38 @@
 
             <p>Оберіть стать:</p>
             <label
-              ><input type="radio" name="gender" value="male" /> Чоловіча</label
+              ><input type="radio" name="genderGet" value="male" />
+              Чоловіча</label
             >
             <label
-              ><input type="radio" name="gender" value="female" /> Жіноча</label
+              ><input type="radio" name="genderGet" value="female" />
+              Жіноча</label
             >
             <label
-              ><input type="radio" name="gender" value="other" checked />
+              ><input type="radio" name="genderGet" value="other" checked />
               Інша</label
             >
 
             <p>Оберіть улюблені предмети:</p>
             <label
-              ><input type="checkbox" name="subject" value="math" />
+              ><input type="checkbox" name="subjectGet" value="math" />
               Математика</label
             >
             <label
-              ><input type="checkbox" name="subject" value="cs" />
+              ><input type="checkbox" name="subjectGet" value="cs" />
               Інформатика</label
             >
             <label
-              ><input type="checkbox" name="subject" value="history" />
+              ><input type="checkbox" name="subjectGet" value="history" />
               Історія</label
             >
             <label
-              ><input type="checkbox" name="subject" value="english" />
+              ><input type="checkbox" name="subjectGet" value="english" />
               Англійська</label
             >
 
             <p>Виберіть курс навчання:</p>
-            <select name="year">
+            <select name="yearGet" id="yearGet">
               <option value="1">1 курс</option>
               <option value="2" selected>2 курс</option>
               <option value="3">3 курс</option>
@@ -101,7 +103,7 @@
             </select>
 
             <p>Виберіть улюблені мови програмування:</p>
-            <select name="languages" multiple size="4">
+            <select name="languagesGet" id="languagesGet" multiple size="4">
               <option value="c++">C++</option>
               <option value="python">Python</option>
               <option value="java">Java</option>
@@ -111,7 +113,7 @@
             </select>
 
             <p>Групи предметів:</p>
-            <select name="grouped">
+            <select name="groupedGet" id="groupedGet">
               <optgroup label="Природничі науки">
                 <option value="math">Математика</option>
                 <option value="physics">Фізика</option>
@@ -125,8 +127,8 @@
             </select>
 
             <p>Місто проживання:</p>
-            <input list="cities1" name="city" />
-            <datalist id="cities1">
+            <input list="citiesGet" name="cityGet" id="cityGet" />
+            <datalist id="citiesGet">
               <option value="Київ"></option>
               <option value="Львів"></option>
               <option value="Одеса"></option>
@@ -137,9 +139,9 @@
 
           <fieldset>
             <legend>Додатково</legend>
-            <label for="comment1">Коментар:</label>
+            <label for="commentGet">Коментар:</label>
             <textarea
-              id="comment1"
+              id="commentGet"
               name="comment"
               rows="4"
               cols="50"
@@ -149,7 +151,13 @@
 
           <fieldset>
             <legend>Завантаження файлу</legend>
-            <input type="file" name="files" accept="audio/*" multiple />
+            <input
+              type="file"
+              name="filesGet"
+              id="filesGet"
+              accept="audio/*"
+              multiple
+            />
           </fieldset>
 
           <div class="buttons">
@@ -171,46 +179,46 @@
           <fieldset>
             <legend>Особисті дані</legend>
 
-            <label for="name2">Ім’я:</label>
+            <label for="namePost">Ім’я:</label>
             <input
               type="text"
-              id="name2"
+              id="namePost"
               name="name"
               placeholder="Введіть ім’я"
               required
             />
 
-            <label for="password2">Пароль:</label>
+            <label for="passwordPost">Пароль:</label>
             <input
               type="password"
-              id="password2"
+              id="passwordPost"
               name="password"
               placeholder="Введіть пароль"
-              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}"
+              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}"
               title="Мінімум 6 символів, 1 велика літера, 1 мала літера, 1 цифра"
               required
             />
 
-            <label for="email2">Email:</label>
+            <label for="emailPost">Email:</label>
             <input
               type="email"
-              id="email2"
+              id="emailPost"
               name="email"
               placeholder="Введіть email"
               required
             />
 
-            <label for="phone2">Мобільний:</label>
+            <label for="phonePost">Мобільний:</label>
             <input
               type="tel"
-              id="phone2"
+              id="phonePost"
               name="phone"
               placeholder="+380..."
               required
             />
 
-            <label for="birth2">Дата народження:</label>
-            <input type="date" id="birth2" name="birth" required />
+            <label for="birthPost">Дата народження:</label>
+            <input type="date" id="birthPost" name="birth" required />
           </fieldset>
 
           <fieldset>
@@ -218,36 +226,38 @@
 
             <p>Оберіть стать:</p>
             <label
-              ><input type="radio" name="gender" value="male" /> Чоловіча</label
+              ><input type="radio" name="genderPost" value="male" />
+              Чоловіча</label
             >
             <label
-              ><input type="radio" name="gender" value="female" /> Жіноча</label
+              ><input type="radio" name="genderPost" value="female" />
+              Жіноча</label
             >
             <label
-              ><input type="radio" name="gender" value="other" checked />
+              ><input type="radio" name="genderPost" value="other" checked />
               Інша</label
             >
 
             <p>Оберіть улюблені предмети:</p>
             <label
-              ><input type="checkbox" name="subject" value="math" />
+              ><input type="checkbox" name="subjectPost" value="math" />
               Математика</label
             >
             <label
-              ><input type="checkbox" name="subject" value="cs" />
+              ><input type="checkbox" name="subjectPost" value="cs" />
               Інформатика</label
             >
             <label
-              ><input type="checkbox" name="subject" value="history" />
+              ><input type="checkbox" name="subjectPost" value="history" />
               Історія</label
             >
             <label
-              ><input type="checkbox" name="subject" value="english" />
+              ><input type="checkbox" name="subjectPost" value="english" />
               Англійська</label
             >
 
             <p>Виберіть курс навчання:</p>
-            <select name="year">
+            <select name="yearPost" id="yearPost">
               <option value="1">1 курс</option>
               <option value="2" selected>2 курс</option>
               <option value="3">3 курс</option>
@@ -256,7 +266,7 @@
             </select>
 
             <p>Виберіть улюблені мови програмування:</p>
-            <select name="languages" multiple size="4">
+            <select name="languagesPost" id="languagesPost" multiple size="4">
               <option value="c++">C++</option>
               <option value="python">Python</option>
               <option value="java">Java</option>
@@ -266,7 +276,7 @@
             </select>
 
             <p>Групи предметів:</p>
-            <select name="grouped">
+            <select name="groupedPost" id="groupedPost">
               <optgroup label="Природничі науки">
                 <option value="math">Математика</option>
                 <option value="physics">Фізика</option>
@@ -280,8 +290,8 @@
             </select>
 
             <p>Місто проживання:</p>
-            <input list="cities2" name="city" />
-            <datalist id="cities2">
+            <input list="citiesPost" name="cityPost" id="cityPost" />
+            <datalist id="citiesPost">
               <option value="Київ"></option>
               <option value="Львів"></option>
               <option value="Одеса"></option>
@@ -292,9 +302,9 @@
 
           <fieldset>
             <legend>Додатково</legend>
-            <label for="comment2">Коментар:</label>
+            <label for="commentPost">Коментар:</label>
             <textarea
-              id="comment2"
+              id="commentPost"
               name="comment"
               rows="4"
               cols="50"
@@ -304,7 +314,13 @@
 
           <fieldset>
             <legend>Завантаження файлу</legend>
-            <input type="file" name="files" accept="audio/*" multiple />
+            <input
+              type="file"
+              name="filesPost"
+              id="filesPost"
+              accept="audio/*"
+              multiple
+            />
           </fieldset>
 
           <div class="buttons">
