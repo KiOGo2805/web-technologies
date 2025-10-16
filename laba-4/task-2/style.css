@@ -1,10 +1,7 @@
-body {
+.recipe {
   font-family: Arial, sans-serif;
   font-size: 20px;
-}
-
-.center {
-  text-align: center;
+  text-align: center
 }
 
 .color {

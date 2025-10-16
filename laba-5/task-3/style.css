@@ -1,0 +1,108 @@
+.formContainer {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f8ff;
+  border: 2px solid #aac7ff;
+  border-radius: 15px;
+  width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(100, 130, 200, 0.3);
+  color: #222;
+}
+
+.mainTitle {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.formBlock {
+  background-color: #fff;
+  border: 1px solid #cce0ff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  margin-top: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 50, 0.05);
+}
+
+.formBlock h2 {
+  color: #004c99;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.studentForm fieldset {
+  border: 2px solid #88aaff;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-bottom: 25px;
+}
+
+.studentForm legend {
+  color: #004080;
+  font-weight: bold;
+}
+
+.studentForm label {
+  display: block;
+  margin: 6px 0 3px;
+}
+
+.studentForm input,
+.studentForm select,
+.studentForm textarea {
+  width: 95%;
+  padding: 7px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.studentForm p {
+  margin: 10px 0 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn {
+  background-color: #3366cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #003399;
+}
+
+.btn.reset {
+  background-color: #999;
+}
+
+.btn.reset:hover {
+  background-color: #777;
+}
+
+.back {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.backLink {
+  color: #0033cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
