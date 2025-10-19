@@ -61,6 +61,7 @@ body {
 /* Контейнер усіх блоків */
 .blocks {
   width: 990px;
+  justify-content: center;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -80,12 +81,12 @@ body {
 /* ====== ПЕРШІ 6 БЛОКІВ ====== */
 .green {
   border-style: solid;
-  border-color: #22a33c;
+  border-color: green;
   border-width: 4px;
 }
 .greenBig {
   border-style: solid;
-  border-color: #22a33c #7fff44;
+  border-color: green greenyellow;
   border-width: 10px;
 }
 
