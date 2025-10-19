@@ -80,57 +80,48 @@ body {
 }
 
 /* ====== ПЕРШІ 6 БЛОКІВ ====== */
-.block:nth-child(-n+6) {
+.green {
   border-style: solid;
   border-color: #22a33c;
-  background-color: #ffffff;
+  border-width: 4px;
+}
+.greenBig {
+  border-style: solid;
+  border-color: #22a33c #7fff44;
+  border-width: 10px;
 }
 
 /* ====== Стилі для останніх 6 блоків ====== */
-/* Варіант із зображенням рамки */
-.block:nth-child(n+7) {
+.image {
   border: 6px solid transparent;
   border-image: url("../img/border-img.png") 30 round;
-  background-color: #fff7f0;
+  background-color: #edece3;
 }
 
 /* === Радіуси === */
-.radius1 {
-  /* легке округлення */
+.radiusOne {
   border-radius: 15px;
-  border-width: 4px;
 }
 
-.radius2 {
-  /* асиметричне згладження з правого боку */
+.radiusTwo {
   border-radius: 120px 40px 100px 20px / 100px 40px 80px 20px;
-  border-width: 4px;
 }
 
-.radius3 {
-  /* "бульбашка", майже круглий правий верхній */
+.radiusThree {
   border-radius: 200px 100px 100px 200px / 100px 200px 200px 100px;
-  border-width: 4px;
 }
 
-.radius4 {
-  /* скошений верх і низ */
+.radiusFour {
   border-radius: 100px 0 100px 0;
-  border-width: 10px;
 }
 
-.radius5 {
-  /* фігура з “виступом” зліва і плавним низом */
+.radiusFive {
   border-radius: 120px 50px 20px 100px / 100px 50px 50px 120px;
-  border-width: 10px;
 }
 
-.radius6 {
-  /* дзеркальна до п’ятої — вигин праворуч */
+.radiusSix {
   border-radius: 50px 200px 80px 30px / 80px 150px 60px 40px;
-  border-width: 10px;
 }
-
 
 /* Ховер-ефект — легке збільшення */
 .block:hover {

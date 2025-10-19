@@ -55,7 +55,7 @@ body {
   color: #fff;
 }
 
-/* ====== Основна частина сторінки ====== */
+/* ====== Основна частина сторінки ================================================================================== */
 .main {
   padding: 20px 0;
   background-color: #ffffff;
@@ -80,7 +80,7 @@ body {
 /* ===== Block 13 ===== */
 .block13 {
   background-color: #600000;
-  border-radius: 80px 80px 0 0;
+  border-radius: 60px;
   width: 95%;
   margin-bottom: 15px;
 }
@@ -88,26 +88,17 @@ body {
 /* ===== Block 14 ===== */
 .block14 {
   background-color: #a14c4c;
-  border-radius: 0 0 80px 80px;
+  border-radius: 60px;
   width: 95%;
   margin-bottom: 25px;
 }
 
 /* ===== Block 15 ===== */
-.block15 {
-  background-color: #c76c6c;
-  border-radius: 100px 0 100px 0;
+.block15_16 {
+  background-color: #c74141;
+  border-radius: 60px;
   width: 46%;
   margin-right: 1.5%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-/* ===== Block 16 ===== */
-.block16 {
-  background-color: #8a1e1e;
-  border-radius: 0 100px 0 100px;
-  width: 46%;
   display: inline-block;
   vertical-align: top;
 }
