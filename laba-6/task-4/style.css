@@ -58,12 +58,13 @@ body {
 /* ====== Основна частина сторінки ================================================================================== */
 /* Контейнер усіх блоків */
 .shadows {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px 80px;
-  width: 1000px;
+  width: 870px;
   margin: 0 auto;
+}
+.shadows::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Загальні стилі для всіх блоків */
@@ -73,8 +74,9 @@ body {
   border: 1px solid green;
   background-color: white;
   box-sizing: border-box;
-  padding-bottom: 10px;
   overflow: hidden;
+  float: left;
+  margin: 20px;
 }
 
 /* Фото */

@@ -56,14 +56,15 @@ body {
 }
 
 /* ====== Основна частина сторінки ======================================================== */
-
-
 /* Контейнер усіх блоків */
 .blocks {
   width: 990px;
-  justify-content: center;
   margin: 0 auto;
-  overflow: hidden;
+}
+.blocks::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Базовий стиль для кожного блоку */
