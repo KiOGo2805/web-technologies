@@ -1,0 +1,152 @@
+/* Загальні налаштування сторінки */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f6f8ff;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* Обгортка */
+.wrapper {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f5b2a8;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: #ff6e4a;
+  color: #fff;
+}
+
+/* ====== Основна частина сторінки ====== */
+.main {
+  padding: 20px 0;
+}
+
+/* Контейнер усіх блоків */
+.blocks {
+  width: 990px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Базовий стиль для кожного блоку */
+.block {
+  float: left;
+  width: 300px;
+  margin: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ====== ПЕРШІ 6 БЛОКІВ ====== */
+.block:nth-child(-n+6) {
+  border-style: solid;
+  border-color: #22a33c;
+  background-color: #ffffff;
+}
+
+/* ====== Стилі для останніх 6 блоків ====== */
+/* Варіант із зображенням рамки */
+.block:nth-child(n+7) {
+  border: 6px solid transparent;
+  border-image: url("../img/border-img.png") 30 round;
+  background-color: #fff7f0;
+}
+
+/* === Радіуси === */
+.radius1 {
+  /* легке округлення */
+  border-radius: 15px;
+  border-width: 4px;
+}
+
+.radius2 {
+  /* асиметричне згладження з правого боку */
+  border-radius: 120px 40px 100px 20px / 100px 40px 80px 20px;
+  border-width: 4px;
+}
+
+.radius3 {
+  /* "бульбашка", майже круглий правий верхній */
+  border-radius: 200px 100px 100px 200px / 100px 200px 200px 100px;
+  border-width: 4px;
+}
+
+.radius4 {
+  /* скошений верх і низ */
+  border-radius: 100px 0 100px 0;
+  border-width: 10px;
+}
+
+.radius5 {
+  /* фігура з “виступом” зліва і плавним низом */
+  border-radius: 120px 50px 20px 100px / 100px 50px 50px 120px;
+  border-width: 10px;
+}
+
+.radius6 {
+  /* дзеркальна до п’ятої — вигин праворуч */
+  border-radius: 50px 200px 80px 30px / 80px 150px 60px 40px;
+  border-width: 10px;
+}
+
+
+/* Ховер-ефект — легке збільшення */
+.block:hover {
+  transform: scale(1.03);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Текст і заголовок у блоках */
+.block h3 {
+  margin-top: 0;
+  color: #222;
+  font-size: 18px;
+}
+
+.block p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}

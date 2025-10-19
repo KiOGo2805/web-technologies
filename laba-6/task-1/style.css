@@ -1,0 +1,87 @@
+/* Загальні налаштування сторінки */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f6f8ff;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* Обгортка */
+.wrapper {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+/* Меню */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f5b2a8;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: #ff6e4a;
+  color: #fff;
+}
+
+/* Основний блок із багатоколонковим текстом */
+.column-text {
+  column-count: 3;
+  column-gap: 35px;
+  column-rule: 5px dotted red;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Зображення */
+.float-img {
+  width: 200px;
+  margin: 10px 15px 10px 15px;
+  border-radius: 6px;
+}
+
+.float-img.left {
+  float: left;
+}
+
+.float-img.right {
+  float: right;
+}
+
+/* Додатково для акуратності */
+p {
+  margin-bottom: 10px;
+}
