@@ -56,45 +56,81 @@ body {
 }
 
 /* ====== Основна частина сторінки ================================================================================== */
-
-.blocks {
+.gradients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 25px;
   width: 1100px;
   margin: 0 auto;
-  text-align: center;
 }
 
+/* Базові блоки */
 .block {
-  display: inline-block;
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.6;
-  padding: 25px 35px;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  color: #222;
   box-sizing: border-box;
-  text-align: justify;
+  float: left;
+  overflow: hidden;
 }
 
-/* ===== Block 13 ===== */
-.block13 {
-  background-color: #600000;
-  border-radius: 60px;
-  width: 95%;
-  margin-bottom: 15px;
+/* Фото */
+.block img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-/* ===== Block 14 ===== */
-.block14 {
-  background-color: #a14c4c;
-  border-radius: 60px;
-  width: 95%;
-  margin-bottom: 25px;
+/* Заголовок */
+.block h3 {
+  margin: 10px 0;
 }
 
-/* ===== Block 15 ===== */
-.block15_16 {
-  background-color: #c74141;
-  border-radius: 60px;
-  width: 46%;
-  margin-right: 1.5%;
-  display: inline-block;
-  vertical-align: top;
+/* Текст */
+.block p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== Градієнти ===== */
+
+/* 1 — Лінійний градієнт */
+.gradOne {
+  background: linear-gradient(135deg, yellow, blue);
+}
+
+/* 2 — Множинний фон (візерунок + градієнт) */
+.gradTwo {
+  background:
+    repeating-linear-gradient(45deg, yellow 0 20px, blue 20px 40px),
+    radial-gradient(circle at center, #fff 0%, #ccc 100%);
+}
+
+/* 3 — Комбінація лінійного і радіального */
+.gradThree {
+  background:
+    linear-gradient(to right, green, yellow),
+    radial-gradient(circle at center, white, transparent 70%);
+  background-blend-mode: multiply;
+}
+
+/* 4 — Градієнт з трикутним ефектом */
+.gradFour {
+  background:
+    linear-gradient(135deg, yellow 50%, transparent 50%),
+    linear-gradient(-135deg, green 50%, transparent 50%),
+    linear-gradient(to bottom, #fff, #c8e6c9);
+  background-blend-mode: screen;
+}
+
+/* 5 — Радіальний веселковий */
+.gradFive {
+  background:
+    repeating-radial-gradient(circle, red, orange, yellow, green, blue, purple 60%);
 }
