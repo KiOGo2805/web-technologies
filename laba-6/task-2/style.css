@@ -68,51 +68,10 @@ body {
   width: 300px;
   margin: 15px;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.green {
-  border-style: solid;
-  border-color: green;
-  border-width: 4px;
-}
-.greenBig {
-  border-style: solid;
-  border-color: green greenyellow;
-  border-width: 10px;
-}
-
-.image {
-  border: 6px solid transparent;
-  border-image: url("../img/border-img.png") 30 round;
-  background-color: #edece3;
-}
-
-.radiusOne {
-  border-radius: 15px;
-}
-
-.radiusTwo {
-  border-radius: 120px 40px 100px 20px / 100px 40px 80px 20px;
-}
-
-.radiusThree {
-  border-radius: 200px 100px 100px 200px / 100px 200px 200px 100px;
-}
-
-.radiusFour {
-  border-radius: 100px 0 100px 0;
-}
-
-.radiusFive {
-  border-radius: 120px 50px 20px 100px / 100px 50px 50px 120px;
-}
-
-.radiusSix {
-  border-radius: 50px 200px 80px 30px / 80px 150px 60px 40px;
 }
 
 .block:hover {
@@ -131,3 +90,43 @@ body {
   color: #333;
   line-height: 1.5;
 }
+
+.green {
+  border-style: solid;
+  border-color: green;
+  border-width: 4px;
+}
+.green-big {
+  border-style: solid;
+  border-color: green greenyellow;
+  border-width: 10px;
+}
+
+.radius-qne {
+  border-radius: 15px;
+}
+
+.radius-two {
+  border-radius: 120px 40px 100px 20px / 100px 40px 80px 20px;
+}
+
+.radius-three {
+  border-radius: 200px 100px 100px 200px / 100px 200px 200px 100px;
+}
+
+.radius-four {
+  border-radius: 100px 0 100px 0;
+}
+
+.radius-five {
+  border-radius: 120px 50px 20px 100px / 100px 50px 50px 120px;
+}
+
+.radius-six {
+  border-radius: 50px 200px 80px 30px / 80px 150px 60px 40px;
+}
+
+.image-one {
+  border-image: url('../img/pattern1.png') 30 round;
+}
+

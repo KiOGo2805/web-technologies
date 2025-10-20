@@ -1,4 +1,4 @@
-div {
+.plan {
   background-color: rgb(255, 165, 0);
   width: 500px;
   padding: 20px;
@@ -17,14 +17,14 @@ ul {
   margin: 0;
 }
 
-.levelOne > li {
+.plan-list > li {
   background-color: rgb(103, 158, 128);
   padding: 0 20px 0  50px;
   background-repeat: no-repeat;
   margin-bottom: 10px;
 }
 
-.levelTwo > li {
+.plan-item > li {
   font-size: 18px;
   font-style: italic;
   background-color: rgb(153, 180, 102);
@@ -39,14 +39,14 @@ span {
   display: inline-block;
 }
 
-.levelOne > li > span {
+.plan-list > li > span {
   font-size: 20px;
   font-weight: 700;
   background-color: rgb(199, 124, 106);
   margin-bottom: 10px;
 }
 
-.levelTwo > li > span {
+.plan-item > li > span {
   background-color: rgb(218, 106, 32);
 }
 
