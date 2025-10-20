@@ -1,4 +1,3 @@
-/* Загальні налаштування сторінки */
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: #f6f8ff;
@@ -7,7 +6,6 @@ body {
   color: #222;
 }
 
-/* Обгортка */
 .wrapper {
   width: 1140px;
   margin: 0 auto;
@@ -17,7 +15,6 @@ body {
   border-radius: 10px;
 }
 
-/* Шапка */
 .header {
   display: flex;
   align-items: center;
@@ -31,7 +28,6 @@ body {
   border-radius: 50%;
 }
 
-/* Меню */
 .menu ul {
   list-style: none;
   margin: 0;
@@ -56,7 +52,6 @@ body {
   color: #fff;
 }
 
-/* Основний блок із багатоколонковим текстом */
 .column-text {
   column-count: 3;
   column-gap: 35px;
@@ -66,7 +61,6 @@ body {
   font-size: 15px;
 }
 
-/* Зображення */
 .float-img {
   width: 200px;
   margin: 10px 15px 10px 15px;
@@ -81,7 +75,6 @@ body {
   float: right;
 }
 
-/* Додатково для акуратності */
 p {
   margin-bottom: 10px;
 }
