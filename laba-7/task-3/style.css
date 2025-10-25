@@ -1,0 +1,287 @@
+/* --- Базові стилі --- */
+body {
+  /* Шрифти з інструкції */
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f6f8ff; /* (З попереднього стилю) */
+  color: #222;
+  margin: 0;
+  /* Центруємо форму на сторінці */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+/* --- Контейнер форми --- */
+.form-container {
+  width: 620px;
+  border: 20px solid #868686;
+  /* Фон з інструкції */
+  background-image: url(../img/sf.jpg);
+  background-size: cover;
+  background-position: center;
+  /* Внутрішні відступи: зверху 0, по боках 20, знизу 20 */
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+  position: relative; /* Для позиціонування псевдоелементів */
+}
+
+/* --- Заголовок форми (h1) --- */
+h1 {
+  text-align: center;
+  font-size: 25px;
+  color: #efd1ff;
+  font-weight: 700;
+  font-style: italic;
+  margin: 20px 0 40px 0; /* Збільшив нижній відступ для полів */
+  position: relative; /* Для псевдоелементів ::before/::after */
+  transition: all 0.4s ease; /* Плавна зміна стилів */
+}
+
+/* ::first-letter для "Заповніть форму" */
+h1 .main-text::first-letter {
+  font-size: 50px;
+  color: pink;
+}
+
+/* ::first-letter для "Ми вдячні вам" (на :hover) */
+h1 .hover-text::first-letter {
+  font-size: 1.5em; /* (як на картинці) */
+  color: magenta;
+}
+
+/* Стан заголовка за замовчуванням */
+.main-text {
+  display: inline;
+}
+.hover-text {
+  display: none;
+}
+
+/* Червоні лінії з боків (за замовчуванням) */
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  background-color: red;
+  transition: all 0.4s ease; /* Плавна анімація ліній */
+}
+
+h1::before {
+  left: 0;
+  width: 25%;
+}
+
+h1::after {
+  right: 0;
+  width: 25%;
+}
+
+/* --- :hover стан для ВСІЄЇ форми --- */
+
+/* Зміна тексту заголовка */
+.form-container:hover h1 .main-text {
+  display: none;
+}
+.form-container:hover h1 .hover-text {
+  display: inline;
+  color: #efd1ff; /* (як на картинці) */
+  font-style: normal;
+}
+
+/* Зміна ліній заголовка на зелену підкреслену */
+.form-container:hover h1::before {
+  width: 0; /* Ховаємо ліву лінію */
+  left: 50%;
+}
+.form-container:hover h1::after {
+  width: 100%; /* Розтягуємо праву лінію */
+  left: 0;
+  top: auto;
+  bottom: -10px; /* Позиціонуємо під текстом */
+  background-color: limegreen;
+  transform: translateY(0);
+}
+
+/* --- Сітка полів (float) --- */
+.fields-grid {
+  margin-bottom: 20px;
+}
+
+/* Clearfix з інструкції */
+.fields-grid::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Кожна група "лейбл + інпут" */
+.field-group {
+  margin-bottom: 20px; /* Вертикальний відступ між полями */
+}
+
+.float--left {
+  float: left;
+  width: 250px;
+}
+.float--right {
+  float: right;
+  width: 250px;
+}
+
+/* --- Елементи форми (лейбли, інпути) --- */
+label {
+  display: block;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* Загальний стиль для полів вводу */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
+  border-radius: 10px;
+  opacity: 0.6;
+  border: none;
+  outline: none; /* Забираємо рамку при фокусі */
+  padding: 0 10px;
+  box-sizing: border-box;
+  /* Плавний перехід для :hover та :focus */
+  transition: all 0.3s ease;
+}
+
+/* Стилі для input */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 250px;
+  height: 30px;
+}
+
+/* Стилі для textarea */
+.field--fullwidth {
+  width: 540px; /* Ширина з інструкції */
+  margin-left: auto; /* Центрування, якщо ширина < 100% */
+  margin-right: auto;
+}
+
+textarea {
+  width: 100%; /* (100% від 540px) */
+  height: 46px;
+  resize: none; /* Заборона зміни розміру */
+  padding: 5px 10px; /* Внутрішній відступ з інструкції */
+}
+
+/* --- Псевдокласи для полів --- */
+
+/* ::first-line для textarea */
+textarea::first-line {
+  color: red;
+}
+
+/* :hover / :focus для Login, Email, First/Last Name */
+input[type="text"]:hover,
+input[type="email"]:hover {
+  border-bottom: 4px solid #fbf000;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-bottom: 4px solid #ffa600;
+  opacity: 0.8; /* Робимо яскравіше при фокусі */
+}
+
+/* :hover / :focus для Password */
+input[type="password"]:hover {
+  border-bottom: 4px solid #1cff00;
+}
+input[type="password"]:focus {
+  border-bottom: 4px solid #00ffea;
+  opacity: 0.8;
+}
+
+/* :hover для textarea */
+textarea:hover {
+  /* Тінь: 0 0, 10px розмиття, 10px розтягнення, колір */
+  box-shadow: 0 0 10px 10px rgba(233, 27, 154, 0.6);
+}
+
+/* --- Кнопки --- */
+.buttons-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn {
+  width: 130px;
+  line-height: 50px; /* Інтервал тексту 50px */
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  position: relative; /* Для псевдоелемента ::after */
+}
+
+/* Кнопка RESET */
+.btn--reset {
+  border: 3px solid #e64a19;
+  color: #e64a19;
+  margin-right: 20px; /* Відступ між кнопками */
+}
+.btn--reset:hover {
+  border-color: #c64a19;
+  color: white;
+  background-color: #c64a19;
+  border-radius: 15px;
+}
+.btn--reset:active {
+  border-color: #ecfd00;
+  background-color: #ffe904;
+  border-radius: 25px;
+}
+
+/* Кнопка OK */
+.btn--ok {
+  border: 3px solid #0097a7;
+  color: #0097a7;
+}
+.btn--ok:hover {
+  border-color: #0097a7;
+  color: white;
+  background-color: #0097a7;
+  border-radius: 15px;
+}
+.btn--ok:active {
+  border-color: #ecfd00;
+  background-color: #014950;
+  border-radius: 25px;
+}
+
+/* "Піктограма" при :active на кнопках */
+.btn:active::after {
+  content: "»"; /* Використовуємо '»' як піктограму */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+/* Колір піктограми */
+.btn--reset:active::after {
+  color: #c64a19;
+}
+.btn--ok:active::after {
+  color: #ecfd00;
+}
