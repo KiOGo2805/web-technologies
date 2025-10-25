@@ -1,0 +1,92 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f6f8ff;
+  color: #222;
+  margin: 0;
+  /* * Прибираємо flex. 
+   * Просто додамо відступ зверху і знизу, 
+   * щоб .wrapper не прилипав до країв екрану.
+   */
+  padding: 50px 0;
+}
+
+.wrapper {
+  position: relative;
+  width: 650px;
+  height: 300px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  /* * ОСЬ ГОЛОВНА ЗМІНА:
+   * 'margin: 0 auto;' центрує блок по горизонталі.
+   */
+  margin: 0 auto;
+}
+
+.layout-block {
+  position: absolute;
+  border-radius: 6px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.block--background {
+  background-color: #f5b2a8;
+  color: #000;
+  width: 280px;
+  height: 160px;
+  z-index: 1;
+  /*
+   * Змінено: Додано padding-top.
+   * Це змушує текст "Текст всередині блоку"
+   * опуститися нижче і не ховатися за переднім блоком.
+   */
+  padding-top: 75px;
+}
+
+.block--foreground {
+  background-color: #ff6e4a;
+  color: #fff;
+  width: 220px;
+  height: 100px;
+  z-index: 2;
+}
+
+/* --- Оновлені відступи --- */
+
+/* Задній лівий блок */
+.block--bg-left {
+  top: 70px;
+  /* Змінено: трохи зсунув */
+  left: 50px;
+}
+
+/* Задній правий блок */
+.block--bg-right {
+  top: 70px;
+  /* Змінено: зсунув, щоб дати місце */
+  left: 350px;
+}
+
+/* Передній лівий блок */
+.block--fg-left {
+  top: 30px;
+  /*
+   * Змінено: Тепер (20px) менше, ніж у .block--bg-left (50px).
+   * Це змушує його "виходити" зліва на 30px.
+   */
+  left: 20px;
+}
+
+/* Передній правий блок */
+.block--fg-right {
+  top: 30px;
+  /*
+   * Змінено: Тепер (320px) менше, ніж у .block--bg-right (350px).
+   * Це також змушує його "виходити" зліва на 30px.
+   */
+  left: 320px;
+}
