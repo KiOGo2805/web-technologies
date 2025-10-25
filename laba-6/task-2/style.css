@@ -67,7 +67,7 @@ body {
   float: left;
   width: 300px;
   margin: 15px;
-  padding: 20px;
+  padding: 15px;
   background-color: white;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
@@ -80,7 +80,6 @@ body {
 }
 
 .block h3 {
-  margin-top: 0;
   color: #222;
   font-size: 18px;
 }
@@ -127,6 +126,34 @@ body {
 }
 
 .image-one {
-  border-image: url('../img/pattern1.png') 30 round;
+  border: 10px double;
+  border-image: url('../img/pattern2.png') 10 stretch;
 }
 
+.image-six {
+  border: 10px dashed;
+  border-image: url('../img/Untitled2.png') 8 stretch;
+}
+
+.image-five {
+  border: 10px dashed;
+  border-image: url('../img/Untitled2.png') 5 round;
+}
+
+.image-three {
+  border: 10px double;
+  border-image: url('../img/pattern2.png') 16 round;
+}
+
+
+
+
+.image-two {
+  border: 10px solid transparent;
+  border-image: url('../img/pattern2.png') 8 round;
+}
+
+.image-four {
+  border: 10px solid transparent;
+  border-image: url('../img/Untitled2.png') 16 stretch stretch;
+}
