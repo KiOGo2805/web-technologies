@@ -1,12 +1,6 @@
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f6f8ff;
-  margin: 0;
-  padding: 0;
-  color: #222;
-}
 
 .wrapper {
+  font-family: "Segoe UI", sans-serif;
   width: 1140px;
   margin: 0 auto;
   padding: 20px;
