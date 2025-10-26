@@ -1,26 +1,15 @@
-body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f6f8ff;
-  color: #222;
-  margin: 0;
-  /* * Прибираємо flex. 
-   * Просто додамо відступ зверху і знизу, 
-   * щоб .wrapper не прилипав до країв екрану.
-   */
-  padding: 50px 0;
-}
 
-.wrapper {
+
+.layout-container {
+  font-family: "Segoe UI", sans-serif;
   position: relative;
   width: 650px;
   height: 300px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  /* * ОСЬ ГОЛОВНА ЗМІНА:
-   * 'margin: 0 auto;' центрує блок по горизонталі.
-   */
-  margin: 0 auto;
+  padding: 50px 0;
+  margin: 100px auto;
 }
 
 .layout-block {
@@ -39,11 +28,6 @@ body {
   width: 280px;
   height: 160px;
   z-index: 1;
-  /*
-   * Змінено: Додано padding-top.
-   * Це змушує текст "Текст всередині блоку"
-   * опуститися нижче і не ховатися за переднім блоком.
-   */
   padding-top: 75px;
 }
 
