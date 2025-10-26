@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/*горизонтальна навігація*/
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color: #444;
+  /* overflow: hidden; */
+  z-index: 1;
+
+  /* * ВИПРАВЛЕННЯ №5: 
+    * Змушуємо верхнє меню починатися 
+    * ПІСЛЯ бокового меню.
+  */
+  margin-left: 220px; /* Ширина твого .sidebar */
+  width: calc(
+    100% - 220px
+  ); /* Робимо ширину 100% мінус ширина .sidebar */
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: left;
+  position: relative;
+}
+
+.navbar li.right {
+  float: right;
+}
+
+.navbar a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #555;
+}
+
+.navbar .active a {
+  background-color: #4caf50;
+}
+
+/*дроп меню*/
+.navbar .dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #555;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+}
+
+.navbar .dropdown li {
+  float: none;
+}
+
+.navbar .dropdown a {
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.navbar li:hover > .dropdown {
+  display: block;
+}
+
+/*вертикальна навігація*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #0d6efd;
+  overflow-y: auto;
+  /* padding-top: 60px; */
+  z-index: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  position: relative;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-bottom: 1px solid #0a58ca;
+}
+
+.sidebar a:hover {
+  background-color: #0056b3;
+}
+
+.sidebar .active > a {
+  background-color: #004080;
+}
+
+/*вкладені списки*/
+.sidebar ul ul {
+  display: none;
+  background-color: #0b5ed7;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 220px;
+  /* * ВИПРАВЛЕННЯ №7:
+   * Додаємо z-index, щоб меню було ПОВЕРХ
+   * блоку .content (який має z-index: auto).
+   * Ставимо 1001, щоб він був вищий за .navbar .dropdown (1000).
+   */
+  z-index: 1001;
+}
+
+.sidebar li:hover > ul {
+  display: block;
+}
+
+.sidebar ul ul ul {
+  background-color: #084298;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  /* * ВИПРАВЛЕННЯ №8:
+   * Змінюємо відступ, щоб він 
+   * відповідав ширині .sidebar (220px).
+   */
+  margin-left: 220px; /* Тут було 240px */
+  padding: 20px;
+  margin-top: 60px; /* І відступ від .navbar */
+}
+
