@@ -1,24 +1,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+    background: #d0d0d0;
+
 }
 
 /*горизонтальна навігація*/
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   background-color: #444;
-  /* overflow: hidden; */
-  z-index: 1;
-
-  /* * ВИПРАВЛЕННЯ №5: 
-    * Змушуємо верхнє меню починатися 
-    * ПІСЛЯ бокового меню.
-  */
-  margin-left: 220px; /* Ширина твого .sidebar */
-  width: calc(
-    100% - 220px
-  ); /* Робимо ширину 100% мінус ширина .sidebar */
+  z-index: 1000;
+  width: 100%;
 }
 
 .navbar ul {
@@ -45,7 +38,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #555;
+  background-color: #4caf50;
 }
 
 .navbar .active a {
@@ -63,6 +56,10 @@ body {
   top: 100%;
 }
 
+.dropdown {
+  position: relative;
+}
+
 .navbar .dropdown li {
   float: none;
 }
@@ -76,6 +73,12 @@ body {
   display: block;
 }
 
+.navbar::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /*вертикальна навігація*/
 .sidebar {
   position: fixed;
@@ -85,8 +88,7 @@ body {
   height: 100%;
   background-color: #0d6efd;
   overflow-y: auto;
-  /* padding-top: 60px; */
-  z-index: 0;
+  padding-top: 60px;
 }
 
 .sidebar ul {
@@ -120,16 +122,6 @@ body {
 .sidebar ul ul {
   display: none;
   background-color: #0b5ed7;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  width: 220px;
-  /* * ВИПРАВЛЕННЯ №7:
-   * Додаємо z-index, щоб меню було ПОВЕРХ
-   * блоку .content (який має z-index: auto).
-   * Ставимо 1001, щоб він був вищий за .navbar .dropdown (1000).
-   */
-  z-index: 1001;
 }
 
 .sidebar li:hover > ul {
@@ -138,19 +130,10 @@ body {
 
 .sidebar ul ul ul {
   background-color: #084298;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  width: 100%;
+  margin-left: 10px;
 }
 
 .content {
-  /* * ВИПРАВЛЕННЯ №8:
-   * Змінюємо відступ, щоб він 
-   * відповідав ширині .sidebar (220px).
-   */
-  margin-left: 220px; /* Тут було 240px */
+  margin-left: 240px;
   padding: 20px;
-  margin-top: 60px; /* І відступ від .navbar */
 }
-

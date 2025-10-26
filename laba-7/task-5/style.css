@@ -1,256 +1,102 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #d0d0d0;
 
-/* --- Контейнер форми --- */
-.form-container {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  width: 620px;
-  border: 20px solid #868686;
-  /* Фон з інструкції */
-  background-image: url(../img/sf.jpg);
-  background-size: cover;
-  background-position: center;
-  /* Внутрішні відступи: зверху 0, по боках 20, знизу 20 */
-  padding: 0 20px 20px 20px;
-  box-sizing: border-box;
-  position: relative; /* Для позиціонування псевдоелементів */
-  margin: 50px auto; /* Центруємо форму по горизонталі */
+  padding-top: 100px;
+}
+.weather-widget {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
 }
 
-/* --- Заголовок форми (h1) --- */
-.form-container h1 {
-  text-align: center;
-  font-size: 25px;
-  color: #efd1ff;
-  font-weight: 700;
-  font-style: italic;
-  margin: 20px 0 40px 0; /* Збільшив нижній відступ для полів */
-  position: relative; /* Для псевдоелементів ::before/::after */
-  transition: all 0.4s ease; /* Плавна зміна стилів */
+.widget-main {
+  position: relative;
+  width: 220px;
+  height: 200px;
+  background: #1a1a1a;
+  color: white;
+  z-index: 2;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Стан заголовка за замовчуванням */
-.main-text {
-  display: inline;
-}
-.hover-text {
-  display: none;
-}
-
-/* Червоні лінії з боків (за замовчуванням) */
-.form-container h1::before,
-.form-container h1::after {
-  content: "";
+.arrow-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 3px;
-  background-color: red;
-  transition: all 0.4s ease; /* Плавна анімація ліній */
+  top: 60px;
+  left: -40px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.form-container h1::before {
-  left: 0;
-  width: 25%;
+.arrow-nav span {
+  display: inline-block;
+  padding: 5px 8px;
+  color: black;
+  opacity: 0.7;
+  font-size: 22px;
 }
 
-.form-container h1::after {
-  right: 0;
-  width: 25%;
+.arrow-nav span:hover {
+  opacity: 1;
 }
 
-/* --- :hover стан для ВСІЄЇ форми --- */
-
-/* Зміна тексту заголовка */
-.form-container:hover h1 .main-text {
-  display: none;
-}
-.form-container:hover h1 .hover-text {
-  display: inline;
+.temperature {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-size: 80px;
+  font-weight: 300;
 }
 
-/* Зміна ліній заголовка на зелену підкреслену */
-.form-container:hover h1::before {
-  width: 0; /* Ховаємо ліву лінію */
-  left: 50%;
-}
-.form-container:hover h1::after {
-  width: 100%; /* Розтягуємо праву лінію */
-  left: 0;
-  top: auto;
-  bottom: -10px; /* Позиціонуємо під текстом */
-  background-color: limegreen;
-  transform: translateY(0);
+.weather-icon {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  width: 180px;
+  z-index: 10;
+  filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
 }
 
-/* --- Сітка полів (float) --- */
-.fields-grid {
-  margin-bottom: 20px;
+.widget-forecast {
+  position: absolute;
+  bottom: -5px;
+  right: -80px;
+  width: 200px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(5px);
+  box-shadow: 5px 5px rgba(47, 43, 43, 0.299);
+  padding: 10px;
 }
 
-/* Clearfix з інструкції */
-.clearfix::after {
-  content: "";
-  display: block;
+.forecast-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px;
+}
+
+.forecast-list::after {
+  content: '';
+  display: table;
   clear: both;
 }
 
-/* Кожна група "лейбл + інпут" */
-.field-group {
-  margin-bottom: 20px; /* Вертикальний відступ між полями */
-}
-
-.float--left {
+.forecast-day {
   float: left;
-  width: 250px;
-}
-.float--right {
-  float: right;
-  width: 250px;
-}
+  width: 20%;
 
-/* --- Елементи форми (лейбли, інпути) --- */
-.form-container label {
-  display: block;
-  font-size: 18px;
-  color: white;
-  margin-bottom: 5px;
-}
-
-/* Загальний стиль для полів вводу */
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"],
-.form-container textarea {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 16px;
-  color: black;
-  font-weight: 700;
-  border-radius: 10px;
-  opacity: 0.6;
-  border: none;
-  outline: none; /* Забираємо рамку при фокусі */
-  padding: 0 10px;
-  box-sizing: border-box;
-  /* Плавний перехід для :hover та :focus */
-  transition: all 0.3s ease;
-}
-
-/* Стилі для input */
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"] {
-  width: 250px;
-  height: 30px;
-}
-
-/* Стилі для textarea */
-.field--fullwidth {
-  width: 540px; /* Ширина з інструкції */
-  margin-left: auto; /* Центрування, якщо ширина < 100% */
-  margin-right: auto;
-}
-
-.form-container textarea {
-  width: 100%; /* (100% від 540px) */
-  height: 46px;
-  resize: none; /* Заборона зміни розміру */
-  padding: 5px 10px; /* Внутрішній відступ з інструкції */
-}
-
-/* --- Псевдокласи для полів --- */
-
-/* :hover / :focus для Login, Email, First/Last Name */
-.form-container input[type="text"]:hover,
-.form-container input[type="email"]:hover {
-  border-bottom: 4px solid #fbf000;
-}
-.form-container input[type="text"]:focus,
-.form-container input[type="email"]:focus {
-  border-bottom: 4px solid #ffa600;
-  opacity: 0.8; /* Робимо яскравіше при фокусі */
-}
-
-/* :hover / :focus для Password */
-.form-container input[type="password"]:hover {
-  border-bottom: 4px solid #1cff00;
-}
-.form-container input[type="password"]:focus {
-  border-bottom: 4px solid #00ffea;
-  opacity: 0.8;
-}
-
-/* :hover для textarea */
-.form-container textarea:hover {
-  /* Тінь: 0 0, 10px розмиття, 10px розтягнення, колір */
-  box-shadow: 0 0 10px 10px rgba(233, 27, 154, 0.6);
-}
-
-/* --- Кнопки --- */
-.buttons-container {
   text-align: center;
-  margin-top: 10px;
+  color: #333;
 }
 
-.btn {
-  width: 130px;
-  line-height: 50px; /* Інтервал тексту 50px */
-  font-size: 18px;
+.forecast-day .day-name {
+  display: block;
+  font-size: 12px;
   font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  position: relative; /* Для псевдоелемента ::after */
 }
 
-/* Кнопка RESET */
-.btn--reset {
-  border: 3px solid #e64a19;
-  color: #e64a19;
-  margin-right: 20px; /* Відступ між кнопками */
-}
-.btn--reset:hover {
-  border-color: #c64a19;
-  color: white;
-  background-color: #c64a19;
-  border-radius: 15px;
-}
-.btn--reset:active {
-  border-color: #ecfd00;
-  background-color: #ffe904;
-  border-radius: 25px;
-}
-
-/* Кнопка OK */
-.btn--ok {
-  border: 3px solid #0097a7;
-  color: #0097a7;
-}
-.btn--ok:hover {
-  border-color: #0097a7;
-  color: white;
-  background-color: #0097a7;
-  border-radius: 15px;
-}
-.btn--ok:active {
-  border-color: #ecfd00;
-  background-color: #014950;
-  border-radius: 25px;
-}
-
-/* "Піктограма" при :active на кнопках */
-.btn:active::after {
-  content: "»"; /* Використовуємо '»' як піктограму */
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-}
-
-/* Колір піктограми */
-.btn--reset:active::after {
-  color: #c64a19;
-}
-.btn--ok:active::after {
-  color: #ecfd00;
+.forecast-day .day-temp {
+  display: block;
+  font-size: 16px;
+  margin-top: 4px;
 }
