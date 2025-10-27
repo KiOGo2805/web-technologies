@@ -40,7 +40,6 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   height: 3px;
   background-color: red;
   transition: all 0.4s ease;
@@ -68,12 +67,12 @@ body {
   left: 50%;
 }
 .form-container:hover h1::after {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   left: 0;
   top: auto;
   bottom: -10px;
   background-color: limegreen;
-  transform: translateY(0);
 }
 
 .fields-grid {

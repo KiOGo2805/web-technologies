@@ -1,11 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-    background: #d0d0d0;
-
+  background: #d0d0d0;
 }
 
-/*горизонтальна навігація*/
 .navbar {
   position: sticky;
   top: 0;
@@ -18,15 +16,19 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .navbar li {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   position: relative;
 }
 
 .navbar li.right {
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .navbar a {
@@ -45,7 +47,12 @@ body {
   background-color: #4caf50;
 }
 
-/*дроп меню*/
+.navbar a img {
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
 .navbar .dropdown {
   display: none;
   position: absolute;
@@ -61,7 +68,7 @@ body {
 }
 
 .navbar .dropdown li {
-  float: none;
+  display: block;
 }
 
 .navbar .dropdown a {
@@ -69,17 +76,14 @@ body {
   text-align: left;
 }
 
+.navbar .dropdown a img {
+  margin-right: 8px;
+}
+
 .navbar li:hover > .dropdown {
   display: block;
 }
 
-.navbar::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*вертикальна навігація*/
 .sidebar {
   position: fixed;
   top: 0;
@@ -102,12 +106,18 @@ body {
 }
 
 .sidebar a {
-  display: flex;
-  align-items: center;
+  display: block;
   color: white;
   text-decoration: none;
   padding: 12px 20px;
   border-bottom: 1px solid #0a58ca;
+}
+
+.sidebar a img {
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+  vertical-align: middle;
 }
 
 .sidebar a:hover {
@@ -118,7 +128,6 @@ body {
   background-color: #004080;
 }
 
-/*вкладені списки*/
 .sidebar ul ul {
   display: none;
   background-color: #0b5ed7;
