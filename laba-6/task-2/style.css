@@ -1,8 +1,17 @@
+/* 1. Стилі для BODY (додано) */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; 
+  color: #333;
+  line-height: 1.5;
+}
 
 .wrapper {
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується від body */
   width: 1140px;
-  margin: 0 auto;
+  margin: 20px auto; /* Змінено 0 на 20px для відступу зверху */
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -10,10 +19,15 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* display: flex; - Прибрано */
+  /* align-items: center; - Прибрано */
+  /* justify-content: space-between; - Прибрано */
+  overflow: auto; /* Додано 'clearfix' */
   margin-bottom: 25px;
+}
+
+.logo {
+  float: left; /* Додано */
 }
 
 .logo img {
@@ -22,13 +36,32 @@
   border-radius: 50%;
 }
 
+.menu {
+  float: right; /* Додано */
+  /* Додамо трохи відступу, щоб меню було приблизно по центру 
+     відносно логотипу (70px). 
+     (70px лого - ~40px висота кнопки) / 2 = ~15px */
+  padding-top: 15px; 
+}
+
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 15px;
+  /* display: flex; - Прибрано */
+  /* gap: 15px; - Прибрано */
 }
+
+/* Новий стиль для LI, щоб замінити flex/gap */
+.menu li {
+  display: inline-block; /* Ставить елементи в рядок */
+  margin-left: 15px; /* Замінює 'gap' */
+}
+
+.menu li:first-child {
+  margin-left: 0; /* Прибираємо відступ для першого елемента */
+}
+
 
 .menu a {
   display: inline-block;
@@ -46,7 +79,7 @@
   color: #fff;
 }
 
-/* ====== Основна частина сторінки ======================================================== */
+/* ====== Основна частина сторінки (Без змін) ============================================ */
 .blocks {
   width: 990px;
   margin: 0 auto;
@@ -138,9 +171,6 @@
   border: 10px double;
   border-image: url('../img/pattern2.png') 16 round;
 }
-
-
-
 
 .image-two {
   border: 10px solid transparent;

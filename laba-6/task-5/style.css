@@ -1,19 +1,34 @@
+/* 1. Стилі для BODY (додано) */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; 
+  color: #333;
+  line-height: 1.5;
+}
 
 .wrapper {
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується */
   width: 1140px;
-  margin: 0 auto;
+  margin: 20px auto; 
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
+/* 2. Виправлення для HEADER (float замість flex) */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* display: flex; - Прибрано */
+  /* align-items: center; - Прибрано */
+  /* justify-content: space-between; - Прибрано */
+  overflow: auto; /* Додано 'clearfix' */
   margin-bottom: 25px;
+}
+
+.logo {
+  float: left; /* Додано */
 }
 
 .logo img {
@@ -22,12 +37,28 @@
   border-radius: 50%;
 }
 
+/* 3. Виправлення для MENU (float та li замість flex) */
+.menu {
+  float: right; /* Додано */
+  padding-top: 15px; /* Додано для візуального центрування кнопок */
+}
+
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 15px;
+  /* display: flex; - Прибрано */
+  /* gap: 15px; - Прибрано */
+}
+
+/* Новий стиль для LI, щоб замінити flex/gap */
+.menu li {
+  display: inline-block; /* Ставить елементи в рядок */
+  margin-left: 15px; /* Замінює 'gap' */
+}
+
+.menu li:first-child {
+  margin-left: 0; /* Прибираємо відступ для першого елемента */
 }
 
 .menu a {
@@ -46,7 +77,7 @@
   color: #fff;
 }
 
-/* ====== Основна частина сторінки ================================================================================== */
+/* ====== Основна частина сторінки ==================================================== */
 .gradients {
   width: 990px;
   margin: 0 auto;
@@ -68,7 +99,18 @@
   float: left;
   overflow: hidden;
   margin: 15px;
+  
+  /* --- ДОДАНО ЗА ВАШИМ ПРОХАННЯМ --- */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* --- ДОДАНО ДЛЯ ЕФЕКТУ HOVER --- */
+.block:hover {
+  transform: scale(1.03);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
 
 .block img {
   width: 200px;

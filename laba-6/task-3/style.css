@@ -1,19 +1,35 @@
+/* 1. Стилі для BODY (додано) */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Додамо фон, щоб ваш .wrapper та .block гарно виділялись */
+  background-color: #f0f2f5; 
+  color: #333;
+  line-height: 1.5;
+}
 
 .wrapper {
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується */
   width: 1140px;
-  margin: 0 auto;
+  margin: 20px auto; /* Змінено 0 на 20px для відступу зверху */
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
+/* 2. Виправлення для HEADER (float замість flex) */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* display: flex; - Прибрано */
+  /* align-items: center; - Прибрано */
+  /* justify-content: space-between; - Прибрано */
+  overflow: auto; /* Додано 'clearfix' */
   margin-bottom: 25px;
+}
+
+.logo {
+  float: left; /* Додано */
 }
 
 .logo img {
@@ -22,12 +38,28 @@
   border-radius: 50%;
 }
 
+/* 3. Виправлення для MENU (float та li замість flex) */
+.menu {
+  float: right; /* Додано */
+  padding-top: 15px; /* Додано для візуального центрування кнопок */
+}
+
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 15px;
+  /* display: flex; - Прибрано */
+  /* gap: 15px; - Прибрано */
+}
+
+/* Новий стиль для LI, щоб замінити flex/gap */
+.menu li {
+  display: inline-block; /* Ставить елементи в рядок */
+  margin-left: 15px; /* Замінює 'gap' */
+}
+
+.menu li:first-child {
+  margin-left: 0; /* Прибираємо відступ для першого елемента */
 }
 
 .menu a {
@@ -46,7 +78,10 @@
   color: #fff;
 }
 
-/* ====== Основна частина сторінки ================================================================================== */
+/* ====== Основна частина сторінки (Без змін) ==================================================== */
+/* Цей блок вже використовує `display: inline-block` та `text-align: center`, 
+   тому тут виправляти нічого не потрібно. Все вірно!
+*/
 .blocks {
   width: 1100px;
   margin: 0 auto;
@@ -63,21 +98,21 @@
   text-align: justify;
 }
 
-.block13 {
+.block-one {
   background-color: #600000;
   border-radius: 60px;
   width: 95%;
   margin-bottom: 15px;
 }
 
-.block14 {
+.block-two {
   background-color: #a14c4c;
   border-radius: 60px;
   width: 95%;
   margin-bottom: 25px;
 }
 
-.block15_16 {
+.block-three {
   background-color: #c74141;
   border-radius: 60px;
   width: 46%;

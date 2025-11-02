@@ -1,9 +1,16 @@
-
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Світло-сірий фон */
+  line-height: 1.5;
+  color: #333;
+}
 
 .wrapper {
-  font-family: "Segoe UI", sans-serif;
+  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується */
   width: 1140px;
-  margin: 0 auto;
+  margin: 20px auto; /* Додав 20px зверху/знизу для відступу від краю */
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -11,7 +18,8 @@
 }
 
 .header {
-  display: flex;
+  display: grid; /* Замінено flex */
+  grid-template-columns: auto auto; /* Замінено flex */
   align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
@@ -27,7 +35,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: grid; /* Замінено flex */
+  grid-auto-flow: column; /* Замінено flex */
   gap: 15px;
 }
 
@@ -52,7 +61,6 @@
   column-gap: 35px;
   column-rule: 5px dotted red;
   text-align: justify;
-  line-height: 1.5;
   font-size: 15px;
 }
 
