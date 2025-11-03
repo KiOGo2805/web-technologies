@@ -1,34 +1,28 @@
-/* 1. Стилі для BODY (додано) */
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5; 
-  color: #333;
+  background-color: #f0f2f5;
   line-height: 1.5;
+  color: #333;
 }
 
 .wrapper {
-  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується */
   width: 1140px;
-  margin: 20px auto; 
+  margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-/* 2. Виправлення для HEADER (float замість flex) */
 .header {
-  /* display: flex; - Прибрано */
-  /* align-items: center; - Прибрано */
-  /* justify-content: space-between; - Прибрано */
-  overflow: auto; /* Додано 'clearfix' */
+  overflow: auto;
   margin-bottom: 25px;
 }
 
 .logo {
-  float: left; /* Додано */
+  float: left;
 }
 
 .logo img {
@@ -37,32 +31,28 @@ body {
   border-radius: 50%;
 }
 
-/* 3. Виправлення для MENU (float та li замість flex) */
 .menu {
-  float: right; /* Додано */
-  padding-top: 15px; /* Додано для візуального центрування кнопок */
+  float: right;
+  padding-top: 15px;
 }
 
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* display: flex; - Прибрано */
-  /* gap: 15px; - Прибрано */
 }
 
-/* Новий стиль для LI, щоб замінити flex/gap */
 .menu li {
-  display: inline-block; /* Ставить елементи в рядок */
-  margin-left: 15px; /* Замінює 'gap' */
+  float: left;
+  margin-left: 15px;
 }
 
 .menu li:first-child {
-  margin-left: 0; /* Прибираємо відступ для першого елемента */
+  margin-left: 0;
 }
 
 .menu a {
-  display: inline-block;
+  float: left;
   padding: 10px 20px;
   background-color: #f5b2a8;
   color: #000;
@@ -76,7 +66,6 @@ body {
   background-color: #ff6e4a;
   color: #fff;
 }
-
 /* ====== Основна частина сторінки ==================================================== */
 .gradients {
   width: 990px;
@@ -99,13 +88,10 @@ body {
   float: left;
   overflow: hidden;
   margin: 15px;
-  
-  /* --- ДОДАНО ЗА ВАШИМ ПРОХАННЯМ --- */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* --- ДОДАНО ДЛЯ ЕФЕКТУ HOVER --- */
 .block:hover {
   transform: scale(1.03);
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);

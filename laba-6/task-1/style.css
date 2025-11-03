@@ -2,15 +2,14 @@ body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5; /* Світло-сірий фон */
+  background-color: #f0f2f5;
   line-height: 1.5;
   color: #333;
 }
 
 .wrapper {
-  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується */
   width: 1140px;
-  margin: 20px auto; /* Додав 20px зверху/знизу для відступу від краю */
+  margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -18,11 +17,12 @@ body {
 }
 
 .header {
-  display: grid; /* Замінено flex */
-  grid-template-columns: auto auto; /* Замінено flex */
-  align-items: center;
-  justify-content: space-between;
+  overflow: auto;
   margin-bottom: 25px;
+}
+
+.logo {
+  float: left;
 }
 
 .logo img {
@@ -31,13 +31,24 @@ body {
   border-radius: 50%;
 }
 
+.menu {
+  float: right;
+  padding-top: 15px;
+}
+
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid; /* Замінено flex */
-  grid-auto-flow: column; /* Замінено flex */
-  gap: 15px;
+}
+
+.menu li {
+  display: inline-block; 
+  margin-left: 15px;
+}
+
+.menu li:first-child {
+  margin-left: 0;
 }
 
 .menu a {
@@ -55,7 +66,7 @@ body {
   background-color: #ff6e4a;
   color: #fff;
 }
-
+/* ====== Основна частина сторінки ============================================ */
 .column-text {
   column-count: 3;
   column-gap: 35px;

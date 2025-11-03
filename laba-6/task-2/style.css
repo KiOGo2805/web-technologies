@@ -1,17 +1,15 @@
-/* 1. Стилі для BODY (додано) */
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5; 
-  color: #333;
+  background-color: #f0f2f5;
   line-height: 1.5;
+  color: #333;
 }
 
 .wrapper {
-  /* font-family: "Segoe UI", sans-serif; - Вже не потрібно, успадковується від body */
   width: 1140px;
-  margin: 20px auto; /* Змінено 0 на 20px для відступу зверху */
+  margin: 20px auto;
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
@@ -19,15 +17,12 @@ body {
 }
 
 .header {
-  /* display: flex; - Прибрано */
-  /* align-items: center; - Прибрано */
-  /* justify-content: space-between; - Прибрано */
-  overflow: auto; /* Додано 'clearfix' */
+  overflow: auto;
   margin-bottom: 25px;
 }
 
 .logo {
-  float: left; /* Додано */
+  float: left;
 }
 
 .logo img {
@@ -37,34 +32,27 @@ body {
 }
 
 .menu {
-  float: right; /* Додано */
-  /* Додамо трохи відступу, щоб меню було приблизно по центру 
-     відносно логотипу (70px). 
-     (70px лого - ~40px висота кнопки) / 2 = ~15px */
-  padding-top: 15px; 
+  float: right;
+  padding-top: 15px;
 }
 
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* display: flex; - Прибрано */
-  /* gap: 15px; - Прибрано */
 }
 
-/* Новий стиль для LI, щоб замінити flex/gap */
 .menu li {
-  display: inline-block; /* Ставить елементи в рядок */
-  margin-left: 15px; /* Замінює 'gap' */
+  float: left;
+  margin-left: 15px;
 }
 
 .menu li:first-child {
-  margin-left: 0; /* Прибираємо відступ для першого елемента */
+  margin-left: 0;
 }
 
-
 .menu a {
-  display: inline-block;
+  float: left;
   padding: 10px 20px;
   background-color: #f5b2a8;
   color: #000;
@@ -78,8 +66,7 @@ body {
   background-color: #ff6e4a;
   color: #fff;
 }
-
-/* ====== Основна частина сторінки (Без змін) ============================================ */
+/* ====== Основна частина сторінки ============================================ */
 .blocks {
   width: 990px;
   margin: 0 auto;
@@ -157,14 +144,9 @@ body {
   border-image: url('../img/pattern2.png') 10 stretch;
 }
 
-.image-six {
-  border: 10px dashed;
-  border-image: url('../img/Untitled2.png') 8 stretch;
-}
-
-.image-five {
-  border: 10px dashed;
-  border-image: url('../img/Untitled2.png') 5 round;
+.image-two {
+  border: 10px solid transparent;
+  border-image: url('../img/pattern2.png') 8 round;
 }
 
 .image-three {
@@ -172,12 +154,17 @@ body {
   border-image: url('../img/pattern2.png') 16 round;
 }
 
-.image-two {
-  border: 10px solid transparent;
-  border-image: url('../img/pattern2.png') 8 round;
-}
-
 .image-four {
   border: 10px solid transparent;
-  border-image: url('../img/Untitled2.png') 16 stretch stretch;
+  border-image: url('../img/Untitled2.png') 16 stretch;
+}
+
+.image-five {
+  border: 10px dashed;
+  border-image: url('../img/Untitled2.png') 7 round;
+}
+
+.image-six {
+  border: 10px dashed;
+  border-image: url('../img/Untitled2.png') 8 stretch;
 }
