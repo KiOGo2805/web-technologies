@@ -43,7 +43,7 @@ body {
 }
 
 .menu li {
-  display: inline-block; 
+  float: left;
   margin-left: 15px;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 .menu a {
-  display: inline-block;
+  float: left;
   padding: 10px 20px;
   background-color: #f5b2a8;
   color: #000;
