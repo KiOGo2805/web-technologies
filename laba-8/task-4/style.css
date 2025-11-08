@@ -1,0 +1,168 @@
+/* --- Вимога 1: Скидання стилів (reset) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Вимога 3: CSS-змінні (ОНОВЛЕНО) --- */
+:root {
+    --color-text: #6b6b6b;
+    --color-title: #3a3a3a;
+    --color-meta: #9b9b9b;
+    --color-accent: #e94e38;
+    
+    /* ЗМІНА: Нові змінні для шрифтів */
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Abel', sans-serif;
+}
+
+body {
+    /* ЗМІНА: Застосовуємо шрифт 'Inter' до всього тексту */
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+/* --- Cтилі секції "From the Journal" --- */
+.journal-section {
+    padding: 40px 0;
+}
+
+.section-title {
+    /* ЗМІНА: Застосовуємо шрифт 'Abel' до заголовка */
+    font-family: var(--font-heading);
+    font-size: 20px; /* 'Abel' виглядає меншим, тому можна збільшити */
+    color: var(--color-title);
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Вимога: Червоні риски через ::after --- */
+.section-title::after {
+    content: '--';
+    color: var(--color-accent);
+    margin-left: 10px;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 30px;
+}
+
+/* ... (Стилі .journal-grid та .journal-card не змінилися) ... */
+
+.journal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.journal-card {
+    display: flex;
+    gap: 15px;
+}
+
+.card-image {
+    flex: 0 0 100px;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-meta {
+    font-size: 11px;
+    color: var(--color-meta);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    /* 'Inter' тут теж підходить */
+}
+
+.card-title {
+    /* ЗМІНА: Застосовуємо шрифт 'Abel' до заголовка картки */
+    font-family: var(--font-heading);
+    font-size: 18px; /* 'Abel' виглядає меншим */
+    color: var(--color-title);
+    margin-bottom: 8px;
+    font-weight: 700; /* Abel має лише вагу 400, але браузер зробить його "жирним" */
+}
+
+/* --- Вимога: Обробка переповнення тексту (ellipsis) --- */
+.card-snippet {
+    font-size: 14px;
+    color: var(--color-text);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- Вимога: :hover ефекти --- */
+.journal-card .card-title {
+    transition: color 0.3s ease;
+}
+.journal-card:hover .card-title {
+    color: var(--color-accent);
+}
+
+.journal-card .card-image img {
+    transition: opacity 0.3s ease;
+}
+.journal-card:hover .card-image img {
+    opacity: 0.8;
+}
+
+
+/*
+ * ============================================
+ * ЛОГІКА ADAPTIVE (ПК)
+ * ============================================
+ */
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 22px; /* 'Abel' */
+    }
+
+    .journal-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 40px;
+    }
+
+    .journal-card {
+        flex-basis: calc(50% - 15px);
+        gap: 20px;
+    }
+
+    .card-image {
+        flex-basis: 150px;
+    }
+
+    .card-title {
+        font-size: 20px; /* 'Abel' */
+    }
+}
