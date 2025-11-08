@@ -5,20 +5,17 @@
     box-sizing: border-box;
 }
 
-/* --- Вимога 3: CSS-змінні (ОНОВЛЕНО) --- */
+/* --- Вимога 3: CSS-змінні --- */
 :root {
     --color-text: #6b6b6b;
     --color-title: #3a3a3a;
     --color-meta: #9b9b9b;
     --color-accent: #e94e38;
-    
-    /* ЗМІНА: Нові змінні для шрифтів */
     --font-body: 'Inter', sans-serif;
     --font-heading: 'Abel', sans-serif;
 }
 
 body {
-    /* ЗМІНА: Застосовуємо шрифт 'Inter' до всього тексту */
     font-family: var(--font-body);
     color: var(--color-text);
     background-color: #ffffff;
@@ -42,16 +39,14 @@ img {
 }
 
 .section-title {
-    /* ЗМІНА: Застосовуємо шрифт 'Abel' до заголовка */
     font-family: var(--font-heading);
-    font-size: 20px; /* 'Abel' виглядає меншим, тому можна збільшити */
+    font-size: 20px;
     color: var(--color-title);
     font-weight: 700;
     margin-bottom: 15px;
     letter-spacing: 0.5px;
 }
 
-/* --- Вимога: Червоні риски через ::after --- */
 .section-title::after {
     content: '--';
     color: var(--color-accent);
@@ -64,7 +59,11 @@ img {
     margin-bottom: 30px;
 }
 
-/* ... (Стилі .journal-grid та .journal-card не змінилися) ... */
+/*
+ * ============================================
+ * ЛОГІКА MOBILE-FIRST (ТЕЛЕФОН) - ОНОВЛЕНО
+ * ============================================
+ */
 
 .journal-grid {
     display: flex;
@@ -74,21 +73,23 @@ img {
 
 .journal-card {
     display: flex;
-    gap: 15px;
+    flex-direction: column; /* ЗМІНА: тепер картинка НАД текстом */
+    gap: 15px; /* Тепер це відступ між картинкою і текстом */
 }
 
 .card-image {
-    flex: 0 0 100px;
+    /* ЗМІНА: Більше не потрібен 'flex: 0 0 100px' */
+    width: 100%; /* Картинка займає всю ширину картки */
 }
 
 .card-image img {
     width: 100%;
-    height: auto;
+    height: auto; /* Автоматична висота */
 }
 
 .card-content {
-    flex: 1;
-    min-width: 0;
+    /* ЗМІНА: 'flex: 1' та 'min-width: 0' тут більше не потрібні */
+    /* Вони переїхали у media query */
 }
 
 .card-meta {
@@ -96,19 +97,16 @@ img {
     color: var(--color-meta);
     margin-bottom: 5px;
     text-transform: uppercase;
-    /* 'Inter' тут теж підходить */
 }
 
 .card-title {
-    /* ЗМІНА: Застосовуємо шрифт 'Abel' до заголовка картки */
     font-family: var(--font-heading);
-    font-size: 18px; /* 'Abel' виглядає меншим */
+    font-size: 18px;
     color: var(--color-title);
     margin-bottom: 8px;
-    font-weight: 700; /* Abel має лише вагу 400, але браузер зробить його "жирним" */
+    font-weight: 700;
 }
 
-/* --- Вимога: Обробка переповнення тексту (ellipsis) --- */
 .card-snippet {
     font-size: 14px;
     color: var(--color-text);
@@ -119,7 +117,7 @@ img {
     overflow: hidden;
 }
 
-/* --- Вимога: :hover ефекти --- */
+/* ... (стилі :hover залишаються без змін) ... */
 .journal-card .card-title {
     transition: color 0.3s ease;
 }
@@ -137,13 +135,15 @@ img {
 
 /*
  * ============================================
- * ЛОГІКА ADAPTIVE (ПК)
+ * ЛОГІКА ADAPTIVE (ПЛАНШЕТ/ПК)
  * ============================================
+ * Цей блок залишається майже без змін,
+ * але ми додаємо стилі, щоб "скасувати" мобільні.
  */
 
 @media (min-width: 768px) {
     .section-title {
-        font-size: 22px; /* 'Abel' */
+        font-size: 22px;
     }
 
     .journal-grid {
@@ -155,14 +155,21 @@ img {
 
     .journal-card {
         flex-basis: calc(50% - 15px);
+        flex-direction: row; /* ЗМІНА: Повертаємо вигляд "картинка збоку" */
         gap: 20px;
     }
 
     .card-image {
-        flex-basis: 150px;
+        flex-basis: 150px; /* ЗМІНА: Повертаємо фіксовану ширину */
+        /* width: 100% (з мобільної версії) тут скасується */
+    }
+
+    .card-content {
+        flex: 1; /* ЗМІНА: Повертаємо flex, щоб текст займав решту місця */
+        min-width: 0;
     }
 
     .card-title {
-        font-size: 20px; /* 'Abel' */
+        font-size: 20px;
     }
 }
