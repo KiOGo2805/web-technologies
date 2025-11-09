@@ -269,6 +269,7 @@ nav {
   font-weight: 700;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
+  text-align: left;
 }
 
 .section-title::after {
@@ -287,6 +288,7 @@ nav {
   font-size: 14px;
   color: var(--color-text);
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .journal-grid {
