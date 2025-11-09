@@ -168,7 +168,7 @@ img {
  * Картки стають у 2 колонки.
  */
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
     .section-title {
         font-size: 22px;
     }
