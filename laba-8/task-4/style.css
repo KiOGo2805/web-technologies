@@ -30,7 +30,7 @@ img {
 .container {
     width: 90%;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 960px; /* (Це ширина макету, її можна залишити) */
 }
 
 /* --- Cтилі секції "From the Journal" --- */
@@ -61,8 +61,9 @@ img {
 
 /*
  * ============================================
- * ЛОГІКА MOBILE-FIRST (ТЕЛЕФОН) - ОНОВЛЕНО
+ * ЛОГІКА MOBILE-FIRST (ТЕЛЕФОН: <= 576px)
  * ============================================
+ * Це базові стилі. Картинка НАД текстом.
  */
 
 .journal-grid {
@@ -73,23 +74,21 @@ img {
 
 .journal-card {
     display: flex;
-    flex-direction: column; /* ЗМІНА: тепер картинка НАД текстом */
-    gap: 15px; /* Тепер це відступ між картинкою і текстом */
+    flex-direction: column; /* Картинка над текстом */
+    gap: 15px;
 }
 
 .card-image {
-    /* ЗМІНА: Більше не потрібен 'flex: 0 0 100px' */
-    width: 100%; /* Картинка займає всю ширину картки */
+    width: 100%;
 }
 
 .card-image img {
     width: 100%;
-    height: auto; /* Автоматична висота */
+    height: auto;
 }
 
 .card-content {
-    /* ЗМІНА: 'flex: 1' та 'min-width: 0' тут більше не потрібні */
-    /* Вони переїхали у media query */
+    /* (Поки що нічого не потрібно) */
 }
 
 .card-meta {
@@ -135,41 +134,54 @@ img {
 
 /*
  * ============================================
- * ЛОГІКА ADAPTIVE (ПЛАНШЕТ/ПК)
+ * ЗМІНА: ЛОГІКА ADAPTIVE (ПЛАНШЕТ: 577px - 1199px)
  * ============================================
- * Цей блок залишається майже без змін,
- * але ми додаємо стилі, щоб "скасувати" мобільні.
+ * Картки все ще в 1 стовпець, але картинка ЗБОКУ.
  */
 
-@media (min-width: 768px) {
+@media (min-width: 577px) {
+    .journal-card {
+        flex-direction: row; /* Картинка збоку від тексту */
+        gap: 20px;
+    }
+
+    .card-image {
+        flex-basis: 150px; /* Фіксована ширина для картинки */
+        width: 150px;
+    }
+
+    .card-content {
+        flex: 1; /* Текст займає решту місця */
+        min-width: 0;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+}
+
+
+/*
+ * ============================================
+ * ЗМІНА: ЛОГІКА ADAPTIVE (ДЕКСТОП: >= 1200px)
+ * ============================================
+ * Картки стають у 2 колонки.
+ */
+
+@media (min-width: 1200px) {
     .section-title {
         font-size: 22px;
     }
 
     .journal-grid {
-        flex-direction: row;
+        flex-direction: row; /* Вмикаємо сітку */
         flex-wrap: wrap;
         justify-content: space-between;
         row-gap: 40px;
     }
 
     .journal-card {
-        flex-basis: calc(50% - 15px);
-        flex-direction: row; /* ЗМІНА: Повертаємо вигляд "картинка збоку" */
-        gap: 20px;
-    }
-
-    .card-image {
-        flex-basis: 150px; /* ЗМІНА: Повертаємо фіксовану ширину */
-        /* width: 100% (з мобільної версії) тут скасується */
-    }
-
-    .card-content {
-        flex: 1; /* ЗМІНА: Повертаємо flex, щоб текст займав решту місця */
-        min-width: 0;
-    }
-
-    .card-title {
-        font-size: 20px;
+        flex-basis: calc(50% - 15px); /* Картки по 2 в ряд */
+        /* 'flex-direction: row' успадковується з (min-width: 577px) */
     }
 }
