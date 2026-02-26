@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лабораторна робота №2</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      section {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+      }
+      button {
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-top: 10px;
+      }
+      input {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h3>1. Оператори порівняння</h3>
+      <p>
+        Введіть числа через кому:
+        <input type="text" id="numsInput" value="10, 5, 22, -3, 8" />
+      </p>
+      <button onclick="runMinMax()">Знайти Мін/Макс</button>
+      <p id="minMaxResult"></p>
+    </section>
+
+    <section>
+      <h3>2. Логічні оператори</h3>
+      <p>Введіть число: <input type="number" id="rangeInput" value="25" /></p>
+      <button onclick="runRangeCheck()">Перевірити діапазон(10-50)</button>
+      <p id="rangeResult"></p>
+    </section>
+
+    <section>
+      <h3>3. Умовні розгалуження</h3>
+      <p>Оцінка (0-100): <input type="number" id="gradeInput" value="85" /></p>
+      <p>
+        Номер місяця (1-12): <input type="number" id="monthInput" value="4" />
+      </p>
+      <button onclick="runConditions()">Перевірити умови</button>
+      <div id="condResult"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
