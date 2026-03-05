@@ -38,8 +38,6 @@ function getSeason(month) {
 }
 
 
-console.log("%c--- РЕЗУЛЬТАТИ ВИКОНАННЯ ---", "color: #4CAF50; font-weight: bold; font-size: 14px;");
-
 findMinMax([10, 2, 33, -5, 8]);
 compareObjects({ a: 1 }, { a: 1 });
 
