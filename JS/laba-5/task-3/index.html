@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лабораторна робота №5</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+      }
+      .container {
+        background: white;
+        padding: 20px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .clock {
+        font-size: 48px;
+        font-weight: bold;
+        color: #2c3e50;
+        font-family: monospace;
+      }
+      .blink {
+        animation: blinker 1s linear infinite;
+      }
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin: 10px 0;
+        width: 90%;
+        cursor: pointer;
+      }
+      .result {
+        font-size: 18px;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-top: 10px;
+        min-height: 24px;
+      }
+      h3 {
+        margin-bottom: 5px;
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Поточний час</h3>
+      <div class="clock" id="digitalClock">
+        00<span class="blink">:</span>00<span class="blink">:</span>00
+      </div>
+    </div>
+
+    <div class="container">
+      <h3>Таймер зворотного відліку</h3>
+      <label>Оберіть дату та час завершення:</label><br />
+      <input type="datetime-local" id="countdownInput" />
+      <div class="result" id="countdownResult">Очікування дати...</div>
+    </div>
+
+    <div class="container">
+      <h3>Скільки до Дня народження?</h3>
+      <label>Оберіть вашу дату народження:</label><br />
+      <input type="date" id="birthdayInput" />
+      <div class="result" id="birthdayResult">Очікування дати...</div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
