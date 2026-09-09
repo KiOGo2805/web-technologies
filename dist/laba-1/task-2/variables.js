@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let userName = "Степан";
 let userAge = 19;
 let isStudent = true;
@@ -13,4 +11,5 @@ let words = ["BlaBlaBla", "BleBleBle", "BluBluBlu"];
 let numbers = [1, 2];
 console.log("Масив рядків:", words);
 console.log("Масив чисел:", numbers);
+export {};
 //# sourceMappingURL=variables.js.map
